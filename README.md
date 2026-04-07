@@ -1,10 +1,10 @@
-# modulo_1
+# Módulos 
 # Módulo 1 - Resumen
 
 📄 [Entrega Módulo 1 Alfa](Entrega_módulo_1_alfa.pdf)
 🔗 [Proyecto en Overleaf](https://www.overleaf.com/9735569864mygtmczxxmyh#2ef2a0)
 
-# modulo_2
+# Módulo_2
 1. Introducción a los algoritmos
 2. Repaso de conceptos de Cálculo Numérico (Matlab / Octave)
 3. El lenguaje de programación R
