@@ -1,6 +1,6 @@
 # ==============================================================================
-# TITULO: Contribution Title
-# AUTORES: Ruben Cruz, Simon Fischer, Yesica Villaca, Chiara Palmero, Matias Rosa
+# TITULO: Explicacion herramienta de posit cloud
+# AUTORES: Simon Fischer, Ruben Cruz , Yesica Villaca, Chiara Palmero, Matias Rosa
 # INSTITUTO: Universidad Nacional de Cuyo, Instituto de Ingeniería Industrial
 # ===============================================================================
 
