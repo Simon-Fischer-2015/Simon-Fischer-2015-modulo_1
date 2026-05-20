@@ -1,0 +1,125 @@
+# ==============================================================================
+# TITULO: Contribution Title
+# AUTORES: Ruben Cruz, Simon Fischer, Yesica Villaca, Chiara Palmero, Matias Rosa
+# INSTITUTO: Universidad Nacional de Cuyo, Instituto de Ingeniería Industrial
+# ===============================================================================
+
+
+# ==============================================================================
+# GUÍA DE USO DE RSTUDIO Y POSIT CLOUD
+# ==============================================================================
+
+# 1. Los Componentes de la Interfaz (Los 4 Paneles)
+# ------------------------------------------------------------------------------
+ RStudio organiza el espacio de trabajo en cuatro áreas principales.Entender qué hace cada una es fundamental:
+
+* El Editor de Scripts (Arriba a la izquierda): Es tu bloc de notas inteligente.
+Aquí escribís y guardás tus archivos de código (.R), documentos R Markdown (.Rmd)
+o archivos de Quarto (.qmd). El código escrito acá no se ejecuta hasta que vos
+se lo ordenás.
+
+ * La Consola (Abajo a la izquierda): Es el motor de R. Aquí se ejecuta el código
+  en tiempo real y se muestran los resultados inmediatos de tus operaciones.
+  Podés escribir comandos directos al lado del símbolo ">", pero lo que escribas
+  acá no se guardará en ningún archivo al cerrar la sesión.
+
+ * El Entorno de Trabajo (Environment - Arriba a la derecha): Es la memoria visual
+  de tu sesión. Cada vez que creás una variable, cargás un dataset (base de datos)
+  o guardás un vector, aparecerá listado acá con su nombre, tipo y dimensiones.
+
+ * El Panel de Utilidades (Abajo a la derecha): Contiene varias pestañas críticas:
+  - Files: El explorador de archivos de tu computadora virtual en la nube.
+  - Plots: Donde se muestran los gráficos estáticos que generás.
+  - Packages: Tu biblioteca de herramientas (ver qué tenés instalado y activarlo).
+  - Help: El manual de auxilio integrado.
+
+# 2. Cómo Insertar y Ejecutar Código
+# ------------------------------------------------------------------------------
+ Para trabajar en el Editor de Scripts de forma eficiente, existen combinaciones
+ de teclas que agilizan el flujo de trabajo:
+
+ * Insertar código: Escribís tus funciones directamente en el script. Podés usar
+   comentarios anteponiendo el símbolo "#" para que R ignore esa línea y te sirva
+   de anotación personal.
+
+ * Ejecutar una línea o selección: Colocás el cursor sobre la línea de código que
+   querés correr y presionás "Ctrl + Enter" (en Windows) o "Cmd + Enter" (en Mac).
+   El código se enviará automáticamente a la Consola para ejecutarse.
+
+ * Insertar el operador de asignación ( <- ): En lugar de escribir el signo "menos"
+   y el "menor qué", podés presionar "Alt + -" (en Windows) u "Option + -" (en Mac)
+   y RStudio lo escribirá por vos con los espacios correctos.
+
+# 3. El Sistema de Ayuda (Help)
+ R tiene una de las documentaciones más completas, y podés acceder a ella sin
+ salir de Posit Cloud. Te muestra la descripción de la función, qué argumentos
+ recibe y ejemplos de uso al final de la página.
+
+ * Uso desde la Consola: Si querés saber cómo funciona la herramienta "boxplot",
+  escribís en la consola "?boxplot" o "help(boxplot)" y presionás Enter.
+  La documentación se abrirá en la pestaña Help (abajo a la derecha).
+
+ * Búsqueda manual: Podés ir directo a la pestaña Help, escribir el nombre de
+   cualquier función en la barra de búsqueda con el ícono de la lupa y presionar Enter.
+# ------------------------------------------------------------------------------
+# 4. Gestión y Descarga de Paquetes (Packages)
+
+  R base viene con funciones esenciales, pero para análisis avanzados necesitás
+ "paquetes" (cajas de herramientas creadas por la comunidad).
+
+ * Instalación (Descarga): Se usa el comando "install.packages('nombre_del_paquete')"
+  en la consola. En Posit Cloud esto se conecta a servidores optimizados que
+  descargan versiones precompiladas para Linux en segundos. Esto se hace una sola
+  vez por proyecto.
+
+* Activación (Abrir la caja): Para usar las funciones de un paquete instalado en
+  tu script, debés llamarlo al inicio de tu código usando "library(nombre_del_paquete)"
+ (esta vez sin comillas). Esto se debe hacer cada vez que abrís tu proyecto.
+# ------------------------------------------------------------------------------
+# 5. Herramientas de Comparación de Rendimiento (Benchmarking)
+
+ Cuando estás programando simulaciones, algoritmos matemáticos o sumatorias,
+ a veces existen diferentes formas de resolver el mismo problema (por ejemplo,
+ usar un bucle "for" versus usar funciones vectorizadas). Para medir qué camino
+ es más rápido y eficiente, RStudio cuenta con herramientas de benchmarking.
+
+# Paso 1: Instalación del paquete (ejecutar solo una vez si no está instalado)
+# install.packages("microbenchmark")
+
+# Paso 2: Carga de la librería
+library(microbenchmark)
+
+# Definición de funciones de ejemplo para la simulación
+para_cada_elemento <- function() {
+  # (Espacio para el código basado en bucles)
+}
+
+operacion_directa <- function() {
+  # (Espacio para el código vectorizado optimizado)
+}
+
+# Paso 3: Comparación de opciones ejecutando el benchmark
+resultado <- microbenchmark(
+  opcion_bucle  = para_cada_elemento(),
+  opcion_vector = operacion_directa(),
+  times = 100
+)
+
+# Paso 4: Visualización de los resultados detallados en la consola
+print(resultado)
+
+# 6. La Terminal del Sistema: El Aliado Oculto
+
+ Al lado de la pestaña de la Consola, vas a encontrar una pestaña llamada "Terminal".
+ Esta no es la consola de R, sino una terminal de comandos Linux (el sistema
+ operativo que corre detrás de Posit Cloud).
+
+ Te sirve para tareas que están por fuera de R, como por ejemplo interactuar con
+ GitHub usando comandos tradicionales de Git (git add, git commit, git push),
+ administrar carpetas ocultas del sistema o instalar herramientas complementarias.
+
+ ------------------------------------------------------------------------------
+ ACKNOWLEDGEMENTS
+ ------------------------------------------------------------------------------
+ Please place your acknowledgments at the end of the paper, preceded by an
+ unnumbered run-in heading (i.e. 3rd-level heading).
